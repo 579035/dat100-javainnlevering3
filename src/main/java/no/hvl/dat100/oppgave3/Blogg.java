@@ -72,7 +72,11 @@ public class Blogg {
 	}
 	
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+		String string = "\n";
+		for(int i = 0; i<innleggtabell.length; i++) {
+			string += innleggtabell[i].toString();
+		}
+		return innleggtabell.length + string;
 	}
 
 	// valgfrie oppgaver nedenfor
