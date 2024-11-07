@@ -54,7 +54,7 @@ public class Blogg {
 
 	public boolean ledigPlass() {
 		boolean ledig = true;
-		if (getAntall() == innleggtabell.length) {
+		if (nesteledig == innleggtabell.length) {
 			ledig = false;
 		}
 		return ledig;
@@ -82,18 +82,34 @@ public class Blogg {
 	// valgfrie oppgaver nedenfor
 	
 	public void utvid() {
-		throw new UnsupportedOperationException(TODO.method());
+		Innlegg[] utvidet = new Innlegg[innleggtabell.length*2];
+		System.arraycopy(innleggtabell, 0, utvidet, 0, innleggtabell.length);
+		innleggtabell = utvidet;
 	}
 	
 	public boolean leggTilUtvid(Innlegg innlegg) {
-
-		throw new UnsupportedOperationException(TODO.method());
-		
+		boolean added = false;
+		if (ledigPlass() == true) {
+			leggTil(innlegg);
+			added = true;
+		} else {
+			utvid();
+			leggTil(innlegg);
+			added = true;
+		}
+		return added;
 	}
 	
 	public boolean slett(Innlegg innlegg) {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		boolean slettet = false;
+		for (int i = 0; i<innleggtabell.length;i++) {
+			if (innleggtabell[i].erLik(innlegg) && innleggtabell[i] != null) {
+				innleggtabell[i] = null;
+				slettet = true;
+			}
+		}
+		return slettet;
 	}
 	
 	public int[] search(String keyword) {
