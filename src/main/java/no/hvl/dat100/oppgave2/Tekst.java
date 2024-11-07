@@ -37,7 +37,7 @@ public class Tekst extends Innlegg {
 	}
 
 	public String toString() {
-		String string = String.valueOf(id)+"\n"+bruker+"\n"+dato+"\n"+String.valueOf(likes)+"\n"+tekst;
+		String string = "TEKST\n"+String.valueOf(id)+"\n"+bruker+"\n"+dato+"\n"+String.valueOf(likes)+"\n"+tekst+"\n";
 		return string;
 	}
 	
