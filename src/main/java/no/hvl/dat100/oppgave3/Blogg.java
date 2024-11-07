@@ -74,7 +74,9 @@ public class Blogg {
 	public String toString() {
 		String string = "\n";
 		for(int i = 0; i<innleggtabell.length; i++) {
-			string += innleggtabell[i].toString();
+			if(innleggtabell[i] != null) {
+				string += innleggtabell[i].toString();
+			}
 		}
 		return innleggtabell.length + string;
 	}
