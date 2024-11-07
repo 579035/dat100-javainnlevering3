@@ -35,7 +35,7 @@ public class Blogg {
 	public int finnInnlegg(Innlegg innlegg) {
 		int index = -1;
 		for (int i = 0; i<innleggtabell.length;i++) {
-			if(innleggtabell[i].erLik(innlegg)) {
+			if(innleggtabell[i] != null && innleggtabell[i].erLik(innlegg)) {
 				index = i;
 			}
 		}
@@ -45,7 +45,7 @@ public class Blogg {
 	public boolean finnes(Innlegg innlegg) {
 		boolean finnes = false;
 		for (int i = 0; i<innleggtabell.length;i++) {
-			if(innleggtabell[i].erLik(innlegg)) {
+			if(innleggtabell[i] != null && innleggtabell[i].erLik(innlegg)) {
 				finnes = true;
 			}
 		}
@@ -63,7 +63,6 @@ public class Blogg {
 	
 	public boolean leggTil(Innlegg innlegg) {
 		boolean added = false;
-		
 		if (finnInnlegg(innlegg) == -1) {
 			innleggtabell[nesteledig] = innlegg;
 			nesteledig++;
