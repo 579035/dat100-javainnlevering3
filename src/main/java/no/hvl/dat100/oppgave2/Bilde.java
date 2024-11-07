@@ -5,27 +5,39 @@ import no.hvl.dat100.common.TODO;
 public class Bilde extends Tekst {
 
 	// TODO - objekt variable
+	private String url;
 	
 	public Bilde(int id, String bruker, String dato, String tekst, String url) {
-		throw new UnsupportedOperationException(TODO.constructor("Bilde"));
+		super.id = id;
+		super.bruker = bruker;
+		super.dato = dato;
+		super.tekst = tekst;
+		this.url = url;
 	}
 
 	public Bilde(int id, String bruker, String dato, int likes, String tekst, String url) {
-		throw new UnsupportedOperationException(TODO.constructor("Bilde"));
+		super.id = id;
+		super.bruker = bruker;
+		super.dato = dato;
+		super.likes = likes;
+		super.tekst = tekst;
+		this.url = url;
 	}
 	
 	public String getUrl() {
-		throw new UnsupportedOperationException(TODO.method());
+		return url;
 
 	}
 
 	public void setUrl(String url) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.url = url;
 	}
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method ());
+		//BILDE\n1\nOle Olsen\n23-10\n0\net bilde\nhttp://www.picture.com/oo.jpg\n
+		String string = "BILDE\n"+String.valueOf(id)+"\n"+bruker+"\n"+dato+"\n"+String.valueOf(likes)+"\n"+tekst+"\n"+url+"\n";
+		return string;
 
 	}
 
