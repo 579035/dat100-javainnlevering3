@@ -78,7 +78,7 @@ public class Blogg {
 				string += innleggtabell[i].toString();
 			}
 		}
-		return innleggtabell.length + string;
+		return nesteledig + string;
 	}
 
 	// valgfrie oppgaver nedenfor
